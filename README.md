@@ -26,20 +26,20 @@ It is intended for public sharing and testing without exposing local binaries, e
 
 ```powershell
 cargo build --release -p velkard -p velkar-wallet -p velkar-walletd
-cargo build --release -p velkar-cpuminer
+
 ```
 
 ### Ubuntu / Linux
 
 ```bash
 cargo build --release -p velkard -p velkar-wallet -p velkar-walletd
-cargo build --release -p velkar-cpuminer
+
 ```
 
 ## Run the daemon
 
 ```powershell
-velkard.exe --velkarnet --utxoindex --yes --reset-db --nodnsseed --disable-upnp --enable-unsynced-mining --listen=0.0.0.0:26111 --rpclisten=0.0.0.0:26110 --rpclisten-borsh=0.0.0.0:17110
+velkard.exe --velkarnet --utxoindex --yes --reset-db --disable-upnp --addpeer=212.227.144.255:26111 --listen=0.0.0.0:26111 --rpclisten=0.0.0.0:26110 --rpclisten-borsh=0.0.0.0:17110
 ```
 
 ## Run the wallet
