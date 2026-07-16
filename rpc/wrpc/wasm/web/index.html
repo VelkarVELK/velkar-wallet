@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <script type="module">
+            import * as velkar from './velkar-rpc/velkar-rpc.js';
+            (async () => {
+                await velkar.default('./velkar-rpc/velkar-rpc_bg.wasm');
+                console.log(velkar.version());
+            })();
+        </script>
+    </head>
+    <body></body>
+</html>

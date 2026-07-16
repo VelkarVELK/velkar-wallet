@@ -1,0 +1,53 @@
+[package]
+name = "velkar-wallet-pskt"
+keywords = ["velkar", "wallet", "pskt", "psbt", "bip-370"]
+description = "Partially Signed Velkar Transaction"
+categories = ["cryptography::cryptocurrencies"]
+rust-version.workspace = true
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+edition.workspace = true
+include.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[features]
+wasm32-sdk = ["velkar-consensus-client/wasm32-sdk"]
+wasm32-types = ["velkar-consensus-client/wasm32-types"]
+
+[dependencies]
+velkar-addresses.workspace = true
+velkar-bip32.workspace = true
+velkar-consensus-client.workspace = true
+velkar-consensus-core.workspace = true
+velkar-txscript-errors.workspace = true
+velkar-txscript.workspace = true
+velkar-utils.workspace = true
+
+bincode.workspace = true
+derive_builder.workspace = true
+js-sys.workspace = true
+futures.workspace = true
+hex.workspace = true
+secp256k1.workspace = true
+serde_repr.workspace = true
+serde-value.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+wasm-bindgen.workspace = true
+serde_json.workspace = true
+serde-wasm-bindgen.workspace = true
+workflow-wasm.workspace = true
+separator.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+wasm-bindgen-test.workspace = true
+js-sys.workspace = true
+web-sys.workspace = true
+
+[lints]
+workspace = true

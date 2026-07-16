@@ -1,0 +1,35 @@
+[package]
+name = "velkar-walletd"
+description = "Velkar wallet daemon"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "velkar-walletd"
+path = "src/main.rs"
+
+[dependencies]
+async-trait.workspace = true
+clap.workspace = true
+prost.workspace = true
+tokio = { workspace = true, features = ["macros", "signal", "time", "net"] }
+tonic.workspace = true
+tonic-prost.workspace = true
+velkar-addresses.workspace = true
+velkar-consensus-core.workspace = true
+velkar-core.workspace = true
+velkar-utils.workspace = true
+velkar-wallet-core.workspace = true
+velkar-wallet-keys.workspace = true
+velkar-wrpc-client.workspace = true
+
+[build-dependencies]
+tonic-prost-build.workspace = true
+
+[lints]
+workspace = true

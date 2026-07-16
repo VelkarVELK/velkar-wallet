@@ -1,0 +1,28 @@
+{
+  "name": "velkar",
+  "version": "0.13.5",
+  "description": "Velkar SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velkarnet/velkar.git"
+  },
+  "keywords": [
+    "velkar",
+    "wasm",
+    "sdk"
+  ],
+  "author": "Velkar developers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velkarnet/velkar/issues"
+  },
+  "homepage": "https://github.com/velkarnet/velkar#readme",
+  "dependencies": {
+    "websocket": "1.0.34",
+    "velkar-wasm": "0.13.5"
+  }
+}

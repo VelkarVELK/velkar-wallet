@@ -1,0 +1,1 @@
+wasm-pack build --target web --out-name velkar-wallet --out-dir web/velkar-wallet $@

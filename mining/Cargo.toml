@@ -1,0 +1,44 @@
+[package]
+name = "velkar-mining"
+description = "Velkar mining"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-addresses.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-core.workspace = true
+velkar-hashes.workspace = true
+velkar-mining-errors.workspace = true
+velkar-muhash.workspace = true
+velkar-txscript.workspace = true
+velkar-utils.workspace = true
+
+futures-util.workspace = true
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+serde.workspace = true
+smallvec.workspace = true
+sweep-bptree = "0.4.1"
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "signal"] }
+
+[dev-dependencies]
+velkar-txscript.workspace = true
+criterion.workspace = true
+secp256k1.workspace = true
+
+[[bench]]
+name = "bench"
+harness = false
+
+[lints]
+workspace = true

@@ -1,0 +1,1 @@
+wasm-pack build --target nodejs --out-name velkar-wallet --out-dir nodejs/velkar-wallet $@

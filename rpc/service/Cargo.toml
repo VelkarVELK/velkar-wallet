@@ -1,0 +1,40 @@
+[package]
+name = "velkar-rpc-service"
+description = "Velkar RPC service"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-addresses.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensus-notify.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-core.workspace = true
+velkar-hashes.workspace = true
+velkar-index-core.workspace = true
+velkar-math.workspace = true
+velkar-mining.workspace = true
+velkar-notify.workspace = true
+velkar-p2p-flows.workspace = true
+velkar-p2p-lib.workspace = true
+velkar-p2p-mining.workspace = true
+velkar-perf-monitor.workspace = true
+velkar-rpc-core.workspace = true
+velkar-txscript.workspace = true
+velkar-utils.workspace = true
+velkar-utils-tower.workspace = true
+velkar-utxoindex.workspace = true
+
+async-trait.workspace = true
+log.workspace = true
+tokio.workspace = true
+triggered.workspace = true
+workflow-rpc.workspace = true
+
+[lints]
+workspace = true

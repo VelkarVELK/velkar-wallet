@@ -1,0 +1,89 @@
+#!/bin/bash
+# This script builds the Rusty Velkar WASM32 SDK release.
+
+# make the script fail for any failed command
+set -e
+
+# Workaround for Rust 1.87.0
+# https://github.com/rust-lang/rust/issues/141048
+export RUSTFLAGS=-Ctarget-cpu=mvp
+
+rm -rf release/*
+rm -rf web/*
+rm -rf nodejs/*
+rm -rf docs/*
+rm -rf examples/nodejs/typescript/lib
+
+mkdir -p release/velkar-wasm32-sdk/web
+mkdir -p release/velkar-wasm32-sdk/nodejs
+mkdir -p release/velkar-wasm32-sdk/docs
+
+# pushd .
+# cd ../rpc/wrpc/wasm
+# wasm-pack build --target web --out-name velkar-rpc --out-dir web/velkar-rpc --features wasm32-sdk $@
+# popd
+
+wasm-pack build --weak-refs --target web --out-name velkar --out-dir web/velkar-keygen --features wasm32-keygen $@
+wasm-pack build --weak-refs --dev --target web --out-name velkar --out-dir web/velkar-keygen-dev --features wasm32-keygen $@
+
+wasm-pack build --weak-refs --target web --out-name velkar --out-dir web/velkar-rpc --features wasm32-rpc $@
+wasm-pack build --weak-refs --dev --target web --out-name velkar --out-dir web/velkar-rpc-dev --features wasm32-rpc $@
+
+wasm-pack build --weak-refs --target web --out-name velkar --out-dir web/velkar-core --features wasm32-core $@
+wasm-pack build --weak-refs --dev --target web --out-name velkar --out-dir web/velkar-core-dev --features wasm32-core $@
+
+wasm-pack build --weak-refs --target web --out-name velkar --out-dir web/velkar --features wasm32-sdk $@
+wasm-pack build --weak-refs --dev --target web --out-name velkar --out-dir web/velkar-dev --features wasm32-sdk $@
+
+wasm-pack build --weak-refs --target nodejs --out-name velkar --out-dir nodejs/velkar --features wasm32-sdk $@
+wasm-pack build --weak-refs --dev --target nodejs --out-name velkar --out-dir nodejs/velkar-dev --features wasm32-sdk $@
+
+# wasm-pack build --target web --dev --out-name velkar --out-dir build/docs/velkar --features wasm32-sdk $@
+typedoc --name "Velkar WASM32 SDK - Key Generation" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out docs/velkar-keygen ./build/docs/velkar-keygen.ts
+typedoc --name "Velkar WASM32 SDK - RPC" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out docs/velkar-rpc ./build/docs/velkar-rpc.ts
+typedoc --name "Velkar WASM32 SDK - Core" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out docs/velkar-core ./build/docs/velkar-core.ts
+typedoc --name "Velkar WASM32 SDK" --sourceLinkExternal --readme ./README.md --options ./build/docs/ --out docs/velkar ./build/docs/velkar.ts
+
+# cp -r ../rpc/wrpc/wasm/web/velkar-rpc release/velkar-wasm32-sdk/web/velkar-rpc
+cp -r web/velkar-keygen release/velkar-wasm32-sdk/web/velkar-keygen
+cp -r web/velkar-keygen-dev release/velkar-wasm32-sdk/web/velkar-keygen-dev
+
+cp -r web/velkar-rpc release/velkar-wasm32-sdk/web/velkar-rpc
+cp -r web/velkar-rpc-dev release/velkar-wasm32-sdk/web/velkar-rpc-dev
+
+cp -r web/velkar-core release/velkar-wasm32-sdk/web/velkar-core
+cp -r web/velkar-core-dev release/velkar-wasm32-sdk/web/velkar-core-dev
+
+cp -r web/velkar release/velkar-wasm32-sdk/web/velkar
+cp -r web/velkar-dev release/velkar-wasm32-sdk/web/velkar-dev
+
+cp -r nodejs/velkar release/velkar-wasm32-sdk/nodejs/velkar
+cp -r nodejs/velkar-dev release/velkar-wasm32-sdk/nodejs/velkar-dev
+
+cp -r docs/velkar-keygen release/velkar-wasm32-sdk/docs/velkar-keygen
+cp -r docs/velkar-rpc release/velkar-wasm32-sdk/docs/velkar-rpc
+cp -r docs/velkar-core release/velkar-wasm32-sdk/docs/velkar-core
+cp -r docs/velkar release/velkar-wasm32-sdk/docs/velkar
+
+mkdir -p release/velkar-wasm32-sdk/examples/data
+cp -r examples/data/.gitignore release/velkar-wasm32-sdk/examples/data/.gitignore
+cp -r examples/nodejs release/velkar-wasm32-sdk/examples/
+cp -r examples/web release/velkar-wasm32-sdk/examples/
+cp -r examples/init.js release/velkar-wasm32-sdk/examples/
+cp -r examples/jsconfig.json release/velkar-wasm32-sdk/examples/
+cp -r examples/package.json release/velkar-wasm32-sdk/examples/
+
+pushd .
+cd release/velkar-wasm32-sdk/examples
+npm install
+popd
+
+# tsc release/velkar-wasm32-sdk/examples/nodejs/typescript/
+
+cp index.html release/velkar-wasm32-sdk/index.html
+cp README.md release/velkar-wasm32-sdk/README.md
+cp CHANGELOG.md release/velkar-wasm32-sdk/CHANGELOG.md
+cp LICENSE release/velkar-wasm32-sdk/LICENSE
+
+node build/package-sizes.js
+cp package-sizes.js release/velkar-wasm32-sdk/package-sizes.js

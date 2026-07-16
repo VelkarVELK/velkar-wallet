@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wasm-pack build --target web --out-name velkar-rpc --out-dir web/velkar-rpc --features wasm32-sdk

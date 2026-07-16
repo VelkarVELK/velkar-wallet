@@ -1,0 +1,46 @@
+[package]
+name = "velkar-wrpc-wasm"
+description = "Velkar wRPC WASM client"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+wasm32-sdk = ["velkar-wrpc-client/wasm32-sdk"]
+default = []
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+ahash.workspace = true
+async-lock.workspace = true
+cfg-if.workspace = true
+velkar-addresses.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensus-client.workspace = true
+velkar-consensus-wasm.workspace = true
+velkar-notify.workspace = true
+velkar-wrpc-client.workspace = true
+velkar-rpc-core.workspace = true
+velkar-rpc-macros.workspace = true
+velkar-wasm-core.workspace = true
+serde_json.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+workflow-log.workspace = true
+workflow-rpc.workspace = true
+workflow-wasm.workspace = true
+wasm-bindgen.workspace = true
+js-sys.workspace = true
+wasm-bindgen-futures.workspace = true
+workflow-core.workspace = true
+futures.workspace = true
+ring = { version = "0.17", features = ["wasm32_unknown_unknown_js"] }
+
+[lints]
+workspace = true

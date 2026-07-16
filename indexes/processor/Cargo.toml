@@ -1,0 +1,41 @@
+[package]
+name = "velkar-index-processor"
+description = "Velkar index processor"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-consensus-core.workspace = true
+velkar-consensus-notify.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-core.workspace = true
+velkar-database.workspace = true
+velkar-hashes.workspace = true
+velkar-index-core.workspace = true
+velkar-notify.workspace = true
+velkar-utils.workspace = true
+velkar-utxoindex.workspace = true
+
+async-channel.workspace = true
+async-trait.workspace = true
+derive_more.workspace = true
+futures.workspace = true
+log.workspace = true
+paste.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = [ "rt-multi-thread", "macros", "signal" ]}
+triggered.workspace = true
+
+[dev-dependencies]
+velkar-consensus.workspace = true
+parking_lot.workspace = true
+tokio = { workspace = true, features = ["rt", "macros"] }
+rand = {workspace = true,  features = [ "small_rng" ]}
+
+[lints]
+workspace = true
