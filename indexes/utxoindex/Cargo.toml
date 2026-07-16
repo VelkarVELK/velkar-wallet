@@ -1,0 +1,32 @@
+[package]
+name = "velkar-utxoindex"
+description = "Velkar UTXO index"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+futures.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-core.workspace = true
+velkar-database.workspace = true
+velkar-hashes.workspace = true
+velkar-index-core.workspace = true
+velkar-utils.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rocksdb.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+velkar-consensus.workspace = true
+rand = { workspace = true, features = ["small_rng"] }
+
+[lints]
+workspace = true

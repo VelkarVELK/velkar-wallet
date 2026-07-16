@@ -1,0 +1,80 @@
+[package]
+name = "velkar-testing-integration"
+publish = false
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-alloc.workspace = true            # This changes the global allocator for all of the next dependencies so should be kept first
+
+velkar-addresses.workspace = true
+velkar-bip32.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensus-notify.workspace = true
+velkar-consensus.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-core.workspace = true
+velkar-database.workspace = true
+velkar-grpc-client.workspace = true
+velkar-grpc-core.workspace = true
+velkar-grpc-server.workspace = true
+velkar-hashes.workspace = true
+velkar-index-processor.workspace = true
+velkar-math.workspace = true
+velkar-merkle.workspace = true
+velkar-muhash.workspace = true
+velkar-notify.workspace = true
+velkar-pow.workspace = true
+velkar-rpc-core.workspace = true
+velkar-rpc-service.workspace = true
+velkar-txscript.workspace = true
+velkar-utils.workspace = true
+velkar-utxoindex.workspace = true
+velkar-wrpc-server.workspace = true
+velkard.workspace = true
+
+async-channel.workspace = true
+async-trait.workspace = true
+bincode.workspace = true
+clap.workspace = true
+chrono.workspace = true
+crossbeam-channel.workspace = true
+dhat = { workspace = true, optional = true }
+faster-hex.workspace = true
+flate2.workspace = true
+futures-util.workspace = true
+indexmap.workspace = true
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand_distr.workspace = true
+rand.workspace = true
+rayon.workspace = true
+rocksdb.workspace = true
+secp256k1.workspace = true
+serde_json.workspace = true
+serde.workspace = true
+smallvec.workspace = true
+tempfile.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+workflow-perf-monitor.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+rand = { workspace = true, features = ["small_rng"] }
+tokio = { workspace = true, features = ["rt", "macros", "process"] }
+velkar-txscript-errors.workspace = true
+
+[features]
+heap = ["dhat"]
+html_reports = []
+devnet-prealloc = ["velkard/devnet-prealloc"]
+
+[lints]
+workspace = true

@@ -1,0 +1,42 @@
+[package]
+name = "velkar-p2p-flows"
+description = "Velkar p2p flows"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-core.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensus-notify.workspace = true
+velkar-p2p-lib.workspace = true
+velkar-p2p-mining.workspace = true
+velkar-utils.workspace = true
+velkar-utils-tower.workspace = true
+velkar-hashes.workspace = true
+velkar-muhash.workspace = true
+velkar-connectionmanager.workspace = true
+velkar-addressmanager.workspace = true
+velkar-consensusmanager.workspace = true
+velkar-mining.workspace = true
+velkar-notify.workspace = true
+
+async-trait.workspace = true
+futures = { workspace = true, features = ["alloc"] }
+indexmap.workspace = true
+itertools.workspace = true
+log.workspace = true
+parking_lot.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "signal"] }
+tokio-stream = { workspace = true, features = ["net"] }
+uuid = { workspace = true, features = ["v4", "fast-rng"] }
+chrono.workspace = true
+
+[lints]
+workspace = true

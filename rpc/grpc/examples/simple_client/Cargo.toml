@@ -1,0 +1,21 @@
+[package]
+name = "velkar-grpc-simple-client-example"
+description = "Velkar GRPC simple client example"
+publish = false
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+futures.workspace = true
+velkar-rpc-core.workspace = true
+velkar-grpc-client.workspace = true
+tokio.workspace = true
+
+
+[lints]
+workspace = true

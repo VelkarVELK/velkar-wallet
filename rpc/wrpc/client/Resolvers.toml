@@ -1,0 +1,41 @@
+[[resolver]]
+enable = false
+address = "http://127.0.0.1:8888"
+
+[[group]]
+template = "https://*.velkar.stream"
+nodes = ["eric","maxim","sean","troy"]
+
+[[group]]
+template = "https://*.velkar.red"
+nodes = ["john", "mike", "paul", "alex"]
+
+[[group]]
+template = "https://*.velkar.green"
+nodes = ["jake", "mark", "adam", "liam"]
+
+[[group]]
+template = "https://*.velkar.blue"
+nodes = ["noah", "ryan", "jack", "luke"]
+
+# [[group]]
+# enable = true
+# template = "https://*.velkar-ng.org"
+# nodes = ["cole", "ivan", "oscar", "zane"]
+
+# [[group]]
+# enable = true
+# template = "https://*.velkar-ng.io"
+# nodes = ["gary", "hugo", "finn", "evan"]
+
+# [[group]]
+# enable = true
+# template = "https://*.velkar-ng.net"
+# nodes = ["neil", "dave", "kyle", "toby"]
+
+# ---
+
+# [[group]]
+# enable = false
+# template = "https://*."
+# nodes = ["rudy", "todd", "clay", "walt"]

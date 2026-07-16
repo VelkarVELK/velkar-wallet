@@ -1,0 +1,60 @@
+[package]
+name = "velkar-rpc-core"
+description = "Velkar RPC core"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+wasm32-sdk = [
+    "velkar-consensus-client/wasm32-sdk",
+    "velkar-consensus-wasm/wasm32-sdk"
+]
+
+[dependencies]
+velkar-addresses.workspace = true
+velkar-consensus-core.workspace = true
+velkar-consensus-client.workspace = true
+velkar-consensus-notify.workspace = true
+velkar-consensus-wasm.workspace = true
+velkar-core.workspace = true
+velkar-hashes.workspace = true
+velkar-index-core.workspace = true
+velkar-math.workspace = true
+velkar-mining-errors.workspace = true
+velkar-notify.workspace = true
+velkar-txscript.workspace = true
+velkar-utils.workspace = true
+velkar-rpc-macros.workspace = true
+
+async-channel.workspace = true
+async-trait.workspace = true
+borsh.workspace = true
+cfg-if.workspace = true
+derive_more.workspace = true
+downcast.workspace = true
+faster-hex.workspace = true
+hex.workspace = true
+js-sys.workspace = true
+log.workspace = true
+paste.workspace = true
+rand.workspace = true
+serde-wasm-bindgen.workspace = true
+serde.workspace = true
+smallvec.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+wasm-bindgen.workspace = true
+workflow-core.workspace = true
+workflow-serializer.workspace = true
+workflow-wasm.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

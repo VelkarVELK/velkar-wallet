@@ -1,0 +1,48 @@
+[package]
+name = "velkar-grpc-server"
+description = "Velkar gRPC server"
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+include.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+velkar-consensus-core.workspace = true
+velkar-core.workspace = true
+velkar-grpc-core.workspace = true
+velkar-notify.workspace = true
+velkar-rpc-core.workspace = true
+velkar-rpc-macros.workspace = true
+velkar-rpc-service.workspace = true
+velkar-utils-tower.workspace = true
+velkar-utils.workspace = true
+
+async-channel.workspace = true
+async-stream.workspace = true
+async-trait.workspace = true
+faster-hex.workspace = true
+futures.workspace = true
+h2.workspace = true
+itertools.workspace = true
+log.workspace = true
+once_cell.workspace = true
+parking_lot.workspace = true
+paste.workspace = true
+prost.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "sync", "time"] }
+tokio-stream.workspace = true
+tonic = { workspace = true, features = ["gzip"] }
+triggered.workspace = true
+uuid.workspace = true
+rustls.workspace = true
+
+[dev-dependencies]
+velkar-grpc-client.workspace = true
+
+[lints]
+workspace = true

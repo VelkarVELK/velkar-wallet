@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wasm-pack build --target nodejs --out-name velkar-rpc --out-dir nodejs/velkar-rpc --features wasm32-sdk
